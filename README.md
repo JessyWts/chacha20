@@ -9,27 +9,32 @@ The most common ChaCha variant is ChaCha20 (20 rounds). ChaCha20 is
 standardized in [RFC 7539](https://tools.ietf.org/html/rfc7539 "RFC 7539").
 
 This package provides implementations of three ChaCha versions:
-- ChaCha20 with a 64 bit nonce (can en/decrypt up to 2^64 * 64 bytes for one key-nonce combination)  
-- ChaCha20 with a 96 bit nonce (can en/decrypt up to 2^32 * 64 bytes ~ 256 GB for one key-nonce combination)  
-- XChaCha20 with a 192 bit nonce (can en/decrypt up to 2^64 * 64 bytes for one key-nonce combination)  
+
+- ChaCha20 with a 64 bit nonce (can en/decrypt up to 2^64 \* 64 bytes for one key-nonce combination)
+- ChaCha20 with a 96 bit nonce (can en/decrypt up to 2^32 \* 64 bytes ~ 256 GB for one key-nonce combination)
+- XChaCha20 with a 192 bit nonce (can en/decrypt up to 2^64 \* 64 bytes for one key-nonce combination)
 
 Furthermore the chacha sub package implements ChaCha20/12 and ChaCha20/8.
 These versions use 12 or 8 rounds instead of 20.
-But it's recommended to use ChaCha20 (with 20 rounds) - it will be fast enough for almost all purposes. 
+But it's recommended to use ChaCha20 (with 20 rounds) - it will be fast enough for almost all purposes.
 
-### Installation 
-Install in your GOPATH: `go get -u github.com/aead/chacha20`
+### Installation
+
+Install in your GOPATH: `go get -u github.com/jessywts/chacha20`
 
 ### Requirements
+
 All go versions >= 1.8.7 are supported.
 The code may also work on Go 1.7 but this is not tested.
 
 ### Performance
 
 #### AMD64
+
 Hardware: Intel i7-6500U 2.50GHz x 2  
 System: Linux Ubuntu 16.04 - kernel: 4.4.0-62-generic  
-Go version: 1.8.0  
+Go version: 1.8.0
+
 ```
 AVX2
 name                        speed              cpb
@@ -53,10 +58,13 @@ XORKeyStream1K-4            1.10GB/s ± 5%      2.11
 XChaCha20_XORKeyStream64-4   266MB/s ± 0%      8.96
 XChaCha20_XORKeyStream1K-4  1.00GB/s ± 2%      2.32
 ```
+
 #### 386
+
 Hardware: Intel i7-6500U 2.50GHz x 2  
 System: Linux Ubuntu 16.04 - kernel: 4.4.0-62-generic  
-Go version: 1.8.0  
+Go version: 1.8.0
+
 ```
 SSSE3
 name                        speed              cpb

@@ -14,7 +14,7 @@ package chacha20 // import "github.com/aead/chacha20"
 import (
 	"crypto/cipher"
 
-	"github.com/aead/chacha20/chacha"
+	"github.com/jessywts/chacha20/chacha"
 )
 
 // XORKeyStream crypts bytes from src to dst using the given nonce and key.

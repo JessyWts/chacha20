@@ -9,7 +9,7 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/aead/chacha20/chacha"
+	"github.com/jessywts/chacha20/chacha"
 )
 
 func toHex(bits []byte) string {
